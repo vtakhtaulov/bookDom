@@ -1,4 +1,4 @@
-export function bookSuccess(type, book){
+ function bookSuccess(type, book){
     switch(type){
         case "getAll":
            return {
@@ -9,21 +9,16 @@ export function bookSuccess(type, book){
     }
 }
 
-export default function getAllBooks(url) {
-    return (dispatch) => {
-        fetch(url, {
-            credentials: "same-origin", //передаем сессионные данные
-            method: 'GET'
-        })
-            .then(response => {
-                if(response.status !== 200){
-                    throw new Error(response.statusText);
-                }else{
-                    return response;
+export function getAllBooks(url) {
+    return (dispatch) =>{
+        fetch(url)
+            .then(response =>{
+                if(response.status!==200){
+                    throw new Error(response.statusText)
                 }
+                return response;
             })
             .then(response => response.json())
-            .then(allBooks => dispatch(bookSuccess("getAll", allBooks)))
+            .then(book => dispatch(bookSuccess("getAll", book)))
     }
-    
 }

@@ -1,4 +1,4 @@
-import getBook from '../../action_creator/bookCreator.js';
+import {getBook} from '../../action/bookAction.js';
 import {combineReducers} from "redux";
 
 const bookReduser = combineReducers({

@@ -3,6 +3,7 @@ package ru.application.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import ru.application.domain.Book;
 import ru.application.services.BookServices;
 
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin("*")
 @RequestMapping(path = "/book", produces = MediaType.APPLICATION_JSON_VALUE)
 public class BookController {
 
@@ -26,7 +28,7 @@ public class BookController {
         return bookServices.getBook(idBook);
     }
 
-    @PostMapping
+    @PostMapping("/addBook")
     public List<Book> addBook(){
         return new ArrayList<>();
     }
