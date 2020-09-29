@@ -3,14 +3,14 @@ import HeaderPage from './component/headerPage/HeaderPage.js';
 import Catalog from './component/catalogPage/Catalog.js';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Provider} from "react-redux";
-import configStor from "./stores/configStor.js";
+import configStore from "./stores/configStore.js";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class App extends Component {
   render() {
-    return( <div> <Provider store={configStor}>
+    return( <div> <Provider store={configStore}>
              <HeaderPage/>
              <div>
               <Router>

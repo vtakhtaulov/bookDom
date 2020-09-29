@@ -12,21 +12,17 @@ import java.util.Date;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idBook;
+    @Column(name = "id_book")
+    private Long idBook;
 
+    @Column(name = "name_book")
     private String nameBook;
 
-    @ManyToOne
-    @JoinColumn(name = "idAuthor", columnDefinition = "idAuthor")
-    private Author idAuthor;
-
-    @ManyToOne
-    @JoinColumn(name = "idGenre", columnDefinition = "idGenre")
-    private Genre idGenre;
-
     @DateTimeFormat(pattern = "dd.mm.yyyy")
+    @Column(name = "date_release")
     private Date deteRelease;
 
+    @Column(name = "image")
     private String image;
 
 }

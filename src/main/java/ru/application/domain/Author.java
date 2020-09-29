@@ -10,11 +10,14 @@ import javax.persistence.*;
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idAuthor;
+    private Long idAuthor;
 
     private String familyAuthor;
+
     private String otAuthor;
+
     private String nameAuthor;
+
     private String informationAuthor;
 
 }

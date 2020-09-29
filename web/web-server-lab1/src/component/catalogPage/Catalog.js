@@ -2,17 +2,27 @@
 import React, {Component} from 'react';
 import {getAllBooks} from '../../action_creator/bookCreator';
 import {connect} from "react-redux";
+import  "./catalog.css";
+
 
 class Catalog extends Component{
 
     componentDidMount(){
         this.props.getBook("http://localhost:8080/book/all");
-       // console.log(this.props.books.getBook.idBook);
     }
 
     render(){
     return this.props.books.getBook.map((item, key) =>{
-    return <div><img src = "D:\Project\Lab1Architecture\imageBook\esenin.jpg"></img></div>
+        let NewImg = new Image ();
+        NewImg.src = "./images/"+ item.image.toString();
+        console.log("./images/"+ item.image.toString());
+    return <div key={key}>
+                <form className="form_css">
+                    <img src={"./images/"+ item.image.toString()} alt = "" className="book_image" />
+                    <br/>
+                    <span>{item.nameBook}</span>
+                </form>
+            </div>
     });
     }
 }

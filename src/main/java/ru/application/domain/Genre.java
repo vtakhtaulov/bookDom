@@ -10,7 +10,8 @@ import javax.persistence.*;
 public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idGenre;
+    private Long idGenre;
+
     private String nameGenre;
 
 }

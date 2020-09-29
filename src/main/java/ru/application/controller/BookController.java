@@ -5,6 +5,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import ru.application.domain.Book;
+import ru.application.dto.BookDTO;
 import ru.application.services.BookServices;
 
 import java.util.ArrayList;
@@ -19,12 +20,12 @@ public class BookController {
     private final BookServices bookServices;
 
     @GetMapping("/all")
-    public List<Book> getAllBook(){
+    public List<BookDTO> getAllBook(){
         return bookServices.getAllBook();
     }
 
     @GetMapping("/")
-    public Book getAllBook(@RequestParam(name = "idbook") Integer idBook){
+    public BookDTO getAllBook(@RequestParam(name = "idbook") Long idBook){
         return bookServices.getBook(idBook);
     }
 

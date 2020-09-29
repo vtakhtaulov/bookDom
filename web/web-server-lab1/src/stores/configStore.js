@@ -23,9 +23,9 @@ const store =() => {
 };
 let container = store();
 
-let configStor  = composeWithDevTools(middleware)(createStore)
+let configStore  = composeWithDevTools(middleware)(createStore)
             (root_reduser,
                 container
             );
 
-export default configStor;
+export default configStore;
